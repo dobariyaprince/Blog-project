@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js" integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" integrity="sha512-NXUhxhkDgZYOMjaIgd89zF2w51Mub53Ru3zCNp5LTlEzMbNNAjTjDbpURYGS5Mop2cU4b7re1nOIucsVlrx9fA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        a{
+            text-decoration: none;
+        }
+        body{
+            background-color: rgb(220, 220, 220);
+        }
+        header{
+            position: relative;
+        }
+        .rl-btn{
+            position: absolute;
+            right: 0;
+            top: 100%;
+            transform: translateX(20%) translateY(-10%);
+            z-index: 1;
+        }
+        .rl-btn li{
+            list-style: none;
+            border: 10px solid rgb(220, 220, 220);
+        }
+        .rl-btn li a{
+            color: black;
+        }
+
+        .nav-pills li a{
+            font-weight: 500;
+            color: black;
+            transition: all 0.5s;
+        }
+        .nav-pills li a:hover{
+            color: black;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+        }
+        .nav-pills li .heigh-light{
+            background-color: rgb(35, 120, 92);
+            color: whitesmoke;
+        }
+
+
+        .slider {
+            display: flex;
+            align-items: center;
+        }
+
+        .card{
+            display: block;
+            margin: 10px 0px;
+            padding: 0px 10px;
+            border: none;
+            background-color: transparent;
+        }
+        .c-slider{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card a.btn{
+            width: 100px;
+            box-shadow: 2px 2px 5px black;
+            margin-right: 10px;
+        }
+        .card-body{
+            border-bottom: 1px solid rgb(112, 112, 112);
+            border-left: 1px solid rgb(112, 112, 112);
+            border-right: 1px solid rgb(112, 112, 112);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px ;
+        }
+
+        .slider-home{
+            background: url("https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGVuc3xlbnwwfHwwfHw%3D&w=1000&q=80");
+            width: 100%;
+            height: 100%;
+            padding: 150px 50px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .slider-home .col-6{
+            display: block;
+            text-align: end;
+            color: whitesmoke;
+            width: 40%;
+        }
+        .creat{
+            background-color: rgb(65, 65, 65);
+            color: azure;
+        }
+        .creat button{
+            width: 150px;
+            color: aliceblue;
+            font-weight: 700;
+            margin: 40px 0px;
+            text-transform: uppercase;
+        }
+        .hadding{
+            padding-left: 230px;
+        }
+        h1 , h3 , span , h4{
+            text-transform: capitalize;
+        }
+        .card-img-top{
+            width: 415px;
+            height: 280px;
+        }
+        .D-Btn{
+            text-decoration: none;
+            color: brown;
+            padding: 2px 8px 0px 8px;
+            border: 1px solid gray;
+            border-radius: 4px;
+            line-height: 1;
+        }
+        .Com-del{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+       
+    </style>
+</head>
+
+<div class="container py-3">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <h2><strong> Header </strong></h2>
+      </a>
+ 
+      <ul class="nav nav-pills">
+        <li class="nav-item "><a href="/Home" class="nav-link">Home</a></li>
+        <li><a href="/user/profile"class="nav-link">Profile</a></li>
+        <li class="nav-item mx-3"><a href="/blog" class="nav-link">Blog</a></li>
+        <li class="nav-item mx-3"><a href="/Creat" class="nav-link heigh-light">New Post</a></li>
+        <li class="nav-item mx-3"><a href="/logout" class="nav-link heigh-light">Logout</a></li>
+
+    </ul>
+    <ul class="rl-btn d-flex">
+        <li class="nav-item ">
+            <a href="/user/register" class="nav-link text-light px-2 py-1 p-0 btn btn-primary">Register</a>
+        </li>
+        <li class="nav-item ">
+            <a href="/user/login" class="nav-link text-light px-2 py-1 p-0 btn btn-primary">Login</a>
+        </li>
+    </ul>
+    </header>
+    <hr class="mb-2">
+</div>
+
+
+<script>
+    <% if(flash.success && flash.success.length > 0){ %>
+      new Noty({
+        text : '<%= flash.success %>',
+        type : 'success',
+        timeout : 1500,
+        theme : 'relax'
+      }).show()
+      <% } %>
+  
+      <% if(flash.error && flash.error.length > 0){ %>
+      new Noty({
+        text : '<%= flash.error %>',
+        type : 'error',
+        timeout : 1500,
+        theme : 'relax'
+      }).show()
+      <% } %>
+  
+  </script>

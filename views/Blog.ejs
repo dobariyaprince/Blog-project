@@ -1,0 +1,95 @@
+
+<body>
+  
+    <%- include('Common/Header') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="slider d-flex pb-4">
+                <div class="col-8">
+                    <img src="https://static.mothership.sg/1/2021/07/fb_Martin-Abbugao-2.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="col-4 ps-5">
+                    <h1>Sunset</h1>
+                    <h4 class="py-3">Sun of a beach that’s a nice sunset!</h4>
+                    <p class="pb-5">Sunset is the time when the sun goes down and night begins. During the sunset, nature assumes fresh, bright, and charming. The sun seems to be a disc of gold. At the time of sunset, one can enjoy the serenity of a sunset. Then nature seems in a hurry.</p>
+      
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+    <hr>
+    
+    <div class="container pt-3">
+        <div class="row">
+            <div class="slider c-slider d-flex pb-5">
+
+            <% for(post of Data){ %>
+                
+                
+                <div class="card col-4">
+                <img src="<%= post.Url %>" class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+
+                    <h3 class="card-title">
+                        <%= post.Hedding %>
+                    </h3>
+
+                    <h5 class="card-title">
+                        <%= post.SubHedding %>
+                    </h5>
+
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="card-btn ">
+                    </p>
+                    <p> Author :- <%= post.user_id?.firstName + ' ' + post.user_id?.lastName %>
+                    <h5>Add your coments here</h5>
+                    <hr hight="50px">
+
+                    <% if(auth){ %>
+
+                        <form action="/comments/createComment" method="post" class="py-3">
+                            <input type="hidden" name="blog_id" value="<%= post._id  %>">
+                            <input type="text" name="content" placeholder="Add Your Comment...">
+                            <button type="submit">Submit</button>
+                        </form>
+                    <% } %>
+                  
+                        
+                        <ul>
+                            <% for(coments of post.comments){ %>
+                                <li class="text-dark">
+                                    <strong>
+                                        Author:
+                                        <%= coments.user_id?.firstName + "" + coments.user_id?.firstName %>
+                                        <br/>
+                                    </strong>
+                                    <div class="Com-del">
+                                        <%= coments.content  %>
+                                        <% if(coments.user_id.id == user_id) { %>
+                                            <a class="D-Btn" href="/comments/deleteComment/<%= coments.id %> ">Delete</a>
+                                        <% } %>
+                                    </div>
+                                    <hr width="100px">
+                                </li>
+                               
+                            <% } %>
+                        </ul>
+                        <% if(post.user_id.id==user_id) { %> <a href="/Blog/Delete/<%= post._id %>" class="btn btn-danger">Delete</a>
+                        <% } %>
+
+
+                    </div>
+                </div>
+            </div>
+        
+            <% } %>
+
+        </div>
+    </div>
+    
+
+</body>
+</html>

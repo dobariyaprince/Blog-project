@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        a{
+            text-decoration: none;
+        }
+        body{
+            background-color: rgb(220, 220, 220);
+        }
+
+        .nav-pills li a{
+            font-weight: 500;
+            color: black;
+            transition: all 0.5s;
+        }
+        .nav-pills li a:hover{
+            color: black;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+        }
+        .nav-pills li .heigh-light{
+            background-color: rgb(35, 120, 92);
+            color: whitesmoke;
+        }
+
+
+        .slider {
+            display: flex;
+            align-items: center;
+        }
+
+        .card{
+            display: block;
+            background-color: transparent;
+            border: none;
+        }
+        .card a.btn{
+            width: 100px;
+            box-shadow: 2px 2px 5px black;
+            margin-right: 10px;
+        }
+
+        .slider-home{
+            background: url("https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGVuc3xlbnwwfHwwfHw%3D&w=1000&q=80");
+            width: 100%;
+            height: 100%;
+            padding: 150px 50px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .slider-home .col-6{
+            display: block;
+            text-align: end;
+            color: whitesmoke;
+            width: 40%;
+        }
+        .creat{
+            background-color: rgb(65, 65, 65);
+            color: azure;
+        }
+        .creat button{
+            width: 150px;
+            color: aliceblue;
+            font-weight: 700;
+            margin: 40px 0px;
+            text-transform: uppercase;
+        }
+        .hadding{
+            padding-left: 230px;
+        }
+        h1 , h3 , span , h4{
+            text-transform: capitalize;
+        }
+       
+    </style>
+</head>
+<body>
+    
+
+      <section class=" register py-5 mt-5">
+          <div class="container">
+              <div class="row">
+                  <h1 class="pb-5 hadding">Registration</h1>
+                <!-- ------ -->
+                  <form action="/UserData" method="post" class="col-8 mx-auto">
+                      <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">firstName</label>
+                          <input type="text" name="firstName" class="form-control" id="exampleFormControlInput1">
+                       </div>
+                      <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">lastName</label>
+                          <input type="text" name="lastName" class="form-control" id="exampleFormControlInput1">
+                       </div>
+                      <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">email</label>
+                          <input type="text" name="email" class="form-control" id="exampleFormControlInput1">
+                       </div>
+                      <div class="mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">password</label>
+                          <input type="text" name="password" class="form-control" id="exampleFormControlInput1">
+                       </div>
+                       <button type="submit" class="btn btn-primary">Register</button>
+                    </form>            
+
+                </div>
+            </div>
+        </section>
+        
+</body>
+</html>
